@@ -1,0 +1,45 @@
+{
+	"name": "ruby-linter",
+	"displayName": "ruby-linter",
+	"description": "An extension to use built in ruby linting in vscode",
+	"version": "0.0.1",
+	"publisher": "hoovercj",
+	"icon": "images/ruby.png",
+	"categories": [
+		"Linters"
+	],
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"homepage": "https://github.com/hoovercj/vscode-ruby-linter",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hoovercj/vscode-ruby-linter.git"
+	},
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"activationEvents": [
+		"onLanguage:ruby"
+	],
+	"main": "./out/src/extension",
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	},
+	"properties": {
+		"ruby.linter.executablePath": {
+			"type": "string",
+			"default": "ruby",
+			"description": "Points to the ruby exectuable."
+		},
+		"ruby.linter.run": {
+			"type": "string",
+			"enum": ["onSave", "onType", "off"],
+			"default": "onType",
+			"description": "Whether the linter is run on save or on type or disabled."
+		}		
+	}
+}
