@@ -37,7 +37,8 @@ export default class RubyLintingProvider implements Linter {
 				range: new Range(parseInt(matches[1]) - 1, 0, parseInt(matches[1]) - 1, Number.MAX_VALUE),			
 				severity: matches[2].toLowerCase().includes("error") ? DiagnosticSeverity.Error : DiagnosticSeverity.Warning,
 				message: matches[3],
-				code: null
+				code: null,
+				source: ''
             });
 		});
 		return diagnostics;
